@@ -1,0 +1,117 @@
+﻿<Window x:Class="Scalp_Checker_Compare_Utility.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scalp_Checker_Compare_Utility"
+        mc:Ignorable="d"
+        Title="Scalp Checker Compare Utility" Height="1000" Width="1200" ResizeMode="CanMinimize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Click="onPreviousBtnClick" Grid.Column="0" x:Name="btn_previous">Previous</Button>
+                <TextBlock Grid.Column="1" Text="Original" x:Name="txt_id" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+                <Button Click="onNextBtnClick" Grid.Column="2" x:Name="btn_next">Next</Button>
+
+            </Grid>
+
+            <Image x:Name="img_original" Width="200" Height="200" Grid.Row="1"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" x:Name="txt_dryness_E" Text="Dryness - EfficientNet" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Grid.Row="2" x:Name="txt_folicultis_E" Text="Foliculitis - EfficientNet" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+
+            <TextBlock Grid.Row="4" x:Name="txt_dryness_V" Text="Dryness - ViT" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Grid.Row="6" x:Name="txt_folicultis_V" Text="Foliculitis - ViT" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+
+            <Image x:Name="img_dryness_E" Width="200" Height="200" Grid.Row="1"/>
+            <Image x:Name="img_folicultis_E" Width="200" Height="200" Grid.Row="3"/>
+
+            <Image x:Name="img_dryness_V" Width="200" Height="200" Grid.Row="5"/>
+            <Image x:Name="img_folicultis_V" Width="200" Height="200" Grid.Row="7"/>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" x:Name="txt_oiliness_E" Text="Oiliness - EfficientNet" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Grid.Row="2" x:Name="txt_dandruff_E" Text="Dandruff - EfficientNet" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+
+            <TextBlock Grid.Row="4" x:Name="txt_oilness_V" Text="Oiliness - ViT" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Grid.Row="6" x:Name="txt_dandruff_V" Text="Dandruff - ViT" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+
+            <Image x:Name="img_oiliness_E" Width="200" Height="200" Grid.Row="1"/>
+            <Image x:Name="img_dandruff_E" Width="200" Height="200" Grid.Row="3"/>
+
+            <Image x:Name="img_oiliness_V" Width="200" Height="200" Grid.Row="5"/>
+            <Image x:Name="img_dandruff_V" Width="200" Height="200" Grid.Row="7"/>
+
+        </Grid>
+
+        <Grid Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" x:Name="txt_erythema_E" Text="Erythema - EfficientNet" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Grid.Row="2" x:Name="txt_hairLoss_E" Text="Hair Loss - EfficientNet" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+
+            <TextBlock Grid.Row="4" x:Name="txt_erythema_V" Text="Erythema - ViT" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+            <TextBlock Grid.Row="6" x:Name="txt_hairLoss_V" Text="Hair Loss - ViT" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="SemiBold"></TextBlock>
+
+            <Image x:Name="img_erythema_E" Width="200" Height="200" Grid.Row="1"/>
+            <Image x:Name="img_hairLoss_E" Width="200" Height="200" Grid.Row="3"/>
+
+            <Image x:Name="img_erythema_V" Width="200" Height="200" Grid.Row="5"/>
+            <Image x:Name="img_hairLoss_V" Width="200" Height="200" Grid.Row="7"/>
+
+        </Grid>
+    </Grid>
+</Window>
